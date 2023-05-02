@@ -23,7 +23,6 @@ public class GameWindow extends JInternalFrame implements Savable
     private final Target target;
     private final RobotPositionPanel robotPositionPanel;
     private final String prefix;
-    private Map<String, String> state;
 
     private final static Timer timer = initTimer();
     private final static int durationRedraw = 10;
@@ -43,6 +42,13 @@ public class GameWindow extends JInternalFrame implements Savable
     public GameWindow()
     {
         super("Игровое поле", true, true, true, true);
+
+        ResourceBundle resourceBundle = ResourceBundle.getBundle(
+                "org.iffomko.gui.localizationProperties.gameWindow.GameWindowResource",
+                new Locale(System.getProperty("user.language"), System.getProperty("user.country"))
+        );
+
+        this.setTitle(resourceBundle.getString("gameWindowTitle"));
 
         robot = new Robot();
         target = new Target();
@@ -86,8 +92,6 @@ public class GameWindow extends JInternalFrame implements Savable
         pack();
 
         prefix = "game";
-
-        state = new HashMap<>();
     }
 
     /**
@@ -97,6 +101,8 @@ public class GameWindow extends JInternalFrame implements Savable
      */
     @Override
     public Map<String, String> save() {
+        Map<String, String> state = new HashMap<>();
+
         if (state.get("isIconified") == null) {
             state.put("isIconified", String.valueOf(isIcon()));
         } else {
@@ -143,13 +149,11 @@ public class GameWindow extends JInternalFrame implements Savable
     @Override
     public void restore(Map<String, String> state) {
         try {
-            this.state = state;
-
-            int width = Integer.parseInt(this.state.get("width"));
-            int height = Integer.parseInt(this.state.get("height"));
-            double x = Double.parseDouble(this.state.get("x"));
-            double y = Double.parseDouble(this.state.get("y"));
-            boolean isIconified = Boolean.parseBoolean(this.state.get("isIconified"));
+            int width = Integer.parseInt(state.get("width"));
+            int height = Integer.parseInt(state.get("height"));
+            double x = Double.parseDouble(state.get("x"));
+            double y = Double.parseDouble(state.get("y"));
+            boolean isIconified = Boolean.parseBoolean(state.get("isIconified"));
 
             setSize(new Dimension(width, height));
 
