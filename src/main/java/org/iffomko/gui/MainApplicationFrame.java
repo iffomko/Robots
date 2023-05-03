@@ -2,16 +2,15 @@ package org.iffomko.gui;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ResourceBundle;
 
 import javax.swing.*;
 
-import org.iffomko.gui.localization.Localization;
-import org.iffomko.log.Logger;
-import org.iffomko.messagedFormatCached.MessageFormatting;
-import org.iffomko.savers.Savable;
-import org.iffomko.savers.SaverException;
-import org.iffomko.savers.StateKeeper;
+import org.iffomko.utils.localization.Localization;
+import org.iffomko.utils.log.Logger;
+import org.iffomko.utils.messagedFormatCached.MessageFormatting;
+import org.iffomko.utils.savers.Savable;
+import org.iffomko.utils.savers.SaverException;
+import org.iffomko.utils.savers.StateKeeper;
 
 /**
  * Приложение со всеми окнами

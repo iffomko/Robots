@@ -1,8 +1,8 @@
 package org.iffomko.gui;
 
-import org.iffomko.gui.localization.Localization;
-import org.iffomko.log.Logger;
-import org.iffomko.messagedFormatCached.MessageFormatting;
+import org.iffomko.utils.localization.Localization;
+import org.iffomko.utils.log.Logger;
+import org.iffomko.utils.messagedFormatCached.MessageFormatting;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +12,6 @@ import java.awt.event.WindowEvent;
 import java.util.Locale;
 import java.util.Observable;
 import java.util.Observer;
-import java.util.ResourceBundle;
 
 /**
  * Меню для класса MainApplicationFrame

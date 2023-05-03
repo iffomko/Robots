@@ -7,12 +7,12 @@ import java.util.*;
 import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 
-import org.iffomko.gui.localization.Localization;
-import org.iffomko.log.LogChangeListener;
-import org.iffomko.log.LogEntry;
-import org.iffomko.log.LogWindowSource;
-import org.iffomko.messagedFormatCached.MessageFormatting;
-import org.iffomko.savers.Savable;
+import org.iffomko.utils.localization.Localization;
+import org.iffomko.utils.log.LogChangeListener;
+import org.iffomko.utils.log.LogEntry;
+import org.iffomko.utils.log.LogWindowSource;
+import org.iffomko.utils.messagedFormatCached.MessageFormatting;
+import org.iffomko.utils.savers.Savable;
 
 /**
  * Окно с содержанием логов

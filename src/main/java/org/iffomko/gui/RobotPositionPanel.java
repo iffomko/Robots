@@ -1,8 +1,8 @@
 package org.iffomko.gui;
 
-import org.iffomko.gui.localization.Localization;
-import org.iffomko.messagedFormatCached.MessageFormatting;
-import org.iffomko.models.Robot;
+import org.iffomko.utils.localization.Localization;
+import org.iffomko.utils.messagedFormatCached.MessageFormatting;
+import org.iffomko.gui.models.Robot;
 
 import javax.swing.*;
 import java.awt.*;
