@@ -20,7 +20,15 @@ public class MainApplicationFrameResource_ru_RU extends ListResourceBundle {
                 {"yesButtonText", "Да"},
                 {"noButtonText", "Нет"},
                 {"closeApp", "Закрыть приложение?"},
-                {"confirmation", "Подтверждение"}
+                {"confirmation", "Подтверждение"},
+                {"FileChooser.cancelButtonText", "Отменить"},
+                {"FileChooser.fileNameLabelText", "Имя файла"},
+                {"FileChooser.filesOfTypeLabelText", "Тип файла"},
+                {"FileChooser.lookInLabelText", "Директория"},
+                {"FileChooser.folderNameLabelText", "Название папки"},
+                {"selectRobotJarDescription", "Только .jar файлы"},
+                {"selectRobotJarApproveBtn", "Выбрать"},
+                {"selectRobotJarTitle", "Загрузить .jar файл"}
         };
     }
 }

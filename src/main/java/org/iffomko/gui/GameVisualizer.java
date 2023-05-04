@@ -6,11 +6,9 @@ import org.iffomko.gui.views.IVisualizer;
 import org.iffomko.gui.views.RobotVisualizer;
 import org.iffomko.gui.views.TargetVisualizer;
 
-import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.geom.AffineTransform;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -34,6 +32,8 @@ public class GameVisualizer extends JPanel implements Observer
         this.robot = robot;
         this.target = target;
         this.duration = duration;
+
+        // ToDo: надо выделить абстракцию для моделей, которые мы можем передавать туда
 
         robotVisualizer = new RobotVisualizer(robot);
         targetVisualizer = new TargetVisualizer(target);

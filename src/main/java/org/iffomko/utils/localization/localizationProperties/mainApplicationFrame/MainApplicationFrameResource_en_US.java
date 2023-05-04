@@ -20,7 +20,15 @@ public class MainApplicationFrameResource_en_US extends ListResourceBundle {
                 {"yesButtonText", "Yes"},
                 {"noButtonText", "No"},
                 {"closeApp", "Close the app?"},
-                {"confirmation", "Confirmation"}
+                {"confirmation", "Confirmation"},
+                {"FileChooser.cancelButtonText", "Cancel"},
+                {"FileChooser.fileNameLabelText", "File name"},
+                {"FileChooser.filesOfTypeLabelText", "Type of file"},
+                {"FileChooser.lookInLabelText", "Directory"},
+                {"FileChooser.folderNameLabelText", "Name of folder"},
+                {"selectRobotJarDescription", "Only .jar files"},
+                {"selectRobotJarApproveBtn", "Select"},
+                {"selectRobotJarTitle", "Select .jar file"}
         };
     }
 }

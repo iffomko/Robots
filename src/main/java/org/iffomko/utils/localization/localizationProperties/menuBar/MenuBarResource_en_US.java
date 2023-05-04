@@ -28,7 +28,10 @@ public class MenuBarResource_en_US extends ListResourceBundle {
                 {"closeDescription", "Closes the application"},
                 {"exit", "Exit"},
                 {"changeLanguageTitle", "Change UI language"},
-                {"changeLanguageDescription", "Changing UI language"}
+                {"changeLanguageDescription", "Changing UI language"},
+                {"loadRobotTitle", "Change robot"},
+                {"loadRobotDescription", "Changing view and model of robot"},
+                {"loadRobotBtn", "Select robot"}
         };
     }
 }

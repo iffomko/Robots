@@ -28,7 +28,10 @@ public class MenuBarResource extends ListResourceBundle {
                 {"closeDescription", "Zaktrivaet prilozhenie"},
                 {"exit", "Vihod"},
                 {"changeLanguageTitle", "Pomenat' yazik interfeysa"},
-                {"changeLanguageDescription", "Menayet yazik interfeysa"}
+                {"changeLanguageDescription", "Menayet yazik interfeysa"},
+                {"loadRobotTitle", "Smenit' robota"},
+                {"loadRobotDescription", "Menayet predstavlenie i model robota"},
+                {"loadRobotBtn", "Zagruzit' robota"}
         };
     }
 }

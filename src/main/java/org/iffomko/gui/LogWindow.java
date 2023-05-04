@@ -27,7 +27,7 @@ public class LogWindow extends JInternalFrame implements LogChangeListener, Sava
      * Локализирует нужные поля этой компоненты
      */
     private void setupLocalization() {
-        String packet = "org.iffomko.gui.localizationProperties.logWindow.LogWindowResource";
+        String packet = "org.iffomko.utils.localization.localizationProperties.logWindow.LogWindowResource";
         this.setTitle(MessageFormatting.getInstance().format("logWindowTitle", packet));
     }
 

@@ -42,7 +42,7 @@ public class GameWindow extends JInternalFrame implements Savable, Observer
      * Локализирует нужные поля этой компоненты
      */
     private void setupLocalization() {
-        String packet = "org.iffomko.gui.localizationProperties.gameWindow.GameWindowResource";
+        String packet = "org.iffomko.utils.localization.localizationProperties.gameWindow.GameWindowResource";
         this.setTitle(MessageFormatting.getInstance().format("gameWindowTitle", packet));
     }
 

@@ -28,7 +28,10 @@ public class MenuBarResource_ru_RU extends ListResourceBundle {
                 {"closeDescription", "Закрывает приложение"},
                 {"exit", "Выход"},
                 {"changeLanguageTitle", "Поменять язык интерфейса"},
-                {"changeLanguageDescription", "Меняет язык интерфейса"}
+                {"changeLanguageDescription", "Меняет язык интерфейса"},
+                {"loadRobotTitle", "Сменить робота"},
+                {"loadRobotDescription", "Меняет представление и модель робота"},
+                {"loadRobotBtn", "Загрузить робота"}
         };
     }
 }

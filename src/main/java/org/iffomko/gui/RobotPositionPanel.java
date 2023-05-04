@@ -22,7 +22,7 @@ public class RobotPositionPanel extends JPanel implements Observer {
      * Локализирует нужные поля этой компоненты
      */
     private void setupLocalization() {
-        String packet = "org.iffomko.gui.localizationProperties.robotPositionPanel.RobotPositionPanelResource";
+        String packet = "org.iffomko.utils.localization.localizationProperties.robotPositionPanel.RobotPositionPanelResource";
 
         ResourceBundle resourceBundle = Localization.getInstance().getResourceBundle(packet);
 

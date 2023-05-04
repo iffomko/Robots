@@ -2,8 +2,10 @@ package org.iffomko.gui;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileFilter;
 
 import org.iffomko.utils.localization.Localization;
 import org.iffomko.utils.log.Logger;
@@ -96,13 +98,62 @@ public class MainApplicationFrame extends JFrame
         desktopPane.add(frame);
         frame.setVisible(true);
     }
+
+    /**
+     * <p>
+     *     Метод, который формирует всплывающее окно с выбором .jar файла с моделью и представлением робота,
+     *     а затем подгружает и подменяет эти два файла
+     * </p>
+     */
+    protected void loadRobot() {
+        String packet = "org.iffomko.utils.localization.localizationProperties.mainApplicationFrame.MainApplicationFrameResource";
+
+        MessageFormatting messageFormatting = MessageFormatting.getInstance();
+
+        UIManager.put("FileChooser.cancelButtonText", messageFormatting.format("FileChooser.cancelButtonText", packet));
+        UIManager.put("FileChooser.fileNameLabelText", messageFormatting.format("FileChooser.fileNameLabelText", packet));
+        UIManager.put("FileChooser.filesOfTypeLabelText", messageFormatting.format("FileChooser.filesOfTypeLabelText", packet));
+        UIManager.put("FileChooser.lookInLabelText", messageFormatting.format("FileChooser.lookInLabelText", packet));
+        UIManager.put("FileChooser.folderNameLabelText", messageFormatting.format("FileChooser.folderNameLabelText", packet));
+
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle(messageFormatting.format("selectRobotJarTitle", packet));
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        fileChooser.setFileFilter(new FileFilter() {
+            @Override
+            public boolean accept(File f) {
+                if (f.isDirectory()) {
+                    return true;
+                }
+
+                return f.getName().endsWith(".jar");
+            }
+
+            @Override
+            public String getDescription() {
+                return messageFormatting.format("selectRobotJarDescription", packet);
+            }
+        });
+
+        int result = fileChooser.showDialog(this, messageFormatting.format("selectRobotJarApproveBtn", packet));
+
+        if (
+                result == JFileChooser.APPROVE_OPTION &&
+                        fileChooser.getSelectedFile().getPath().toLowerCase().endsWith(".jar")
+        ) {
+            String robotPath = fileChooser.getSelectedFile().getPath();
+            System.out.println("Все супер! Мы выбрали робота!\n" + robotPath);
+
+            // ToDo: тут надо запустить загрузчик робота
+        }
+    }
     
     /**
      * Метод, который дергается, когда приложение хочет закрыться
      * @param event - информация о событии
      */
     private void onWindowClosing(WindowEvent event) {
-        String packet = "org.iffomko.gui.localizationProperties.mainApplicationFrame.MainApplicationFrameResource";
+        String packet = "org.iffomko.utils.localization.localizationProperties.mainApplicationFrame.MainApplicationFrameResource";
         MessageFormatting messageFormatting = MessageFormatting.getInstance();
 
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);

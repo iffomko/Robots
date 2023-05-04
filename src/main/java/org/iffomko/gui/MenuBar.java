@@ -6,9 +6,7 @@ import org.iffomko.utils.messagedFormatCached.MessageFormatting;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 import java.util.Locale;
 import java.util.Observable;
 import java.util.Observer;
@@ -24,7 +22,7 @@ public class MenuBar extends JMenuBar implements Observer {
      * Локализирует нужные поля этой компоненты
      */
     private void setupLocalization() {
-        String packet = "org.iffomko.gui.localizationProperties.menuBar.MenuBarResource";
+        String packet = "org.iffomko.utils.localization.localizationProperties.menuBar.MenuBarResource";
         MessageFormatting messageFormatting = MessageFormatting.getInstance();
 
         for (int i = 0; i < INSTANCE.getMenuCount(); i++) {
@@ -84,12 +82,28 @@ public class MenuBar extends JMenuBar implements Observer {
 
                     break;
                 }
-
                 case "changeLanguageTitle": {
                     menu.setText(messageFormatting.format("changeLanguageTitle", packet));
                     menu.getAccessibleContext().setAccessibleDescription(messageFormatting.format(
                             "changeLanguageDescription", packet
                     ));
+                    break;
+                }
+                case "loadRobotTitle": {
+                    menu.setText(messageFormatting.format("loadRobotTitle", packet));
+                    menu.getAccessibleContext().setAccessibleDescription(messageFormatting.format(
+                            "loadRobotDescription", packet
+                    ));
+
+                    for (int j = 0; j < menu.getItemCount(); j++) {
+                        JMenuItem menuItem = menu.getItem(j);
+                        String menuItemName = menuItem.getAccessibleContext().getAccessibleName();
+
+                        if (menuItemName.equals("loadRobotBtn")) {
+                            menuItem.setText(messageFormatting.format("loadRobotBtn", packet));
+                        }
+                    }
+
                     break;
                 }
             }
@@ -120,7 +134,7 @@ public class MenuBar extends JMenuBar implements Observer {
      * @return - меню
      */
     private static MenuBar generateMenuBar(MainApplicationFrame frame) {
-        String packet = "org.iffomko.gui.localizationProperties.menuBar.MenuBarResource";
+        String packet = "org.iffomko.utils.localization.localizationProperties.menuBar.MenuBarResource";
         MessageFormatting messageFormatting = MessageFormatting.getInstance();
 
         MenuBar menuBar = new MenuBar();
@@ -200,10 +214,25 @@ public class MenuBar extends JMenuBar implements Observer {
             Localization.getInstance().setLocale(new Locale("", ""));
         }));
 
+        JMenu loadRobot = generateMenu(
+                messageFormatting.format("loadRobotTitle", packet),
+                "loadRobotTitle",
+                KeyEvent.VK_L,
+                messageFormatting.format("loadRobotDescription", packet)
+        );
+
+        loadRobot.add(generateMenuItem(
+                messageFormatting.format("loadRobotBtn", packet),
+                "loadRobotBtn",
+                KeyEvent.VK_L,
+                (event) -> frame.loadRobot()
+        ));
+
         menuBar.add(lookAndFeelMenu);
         menuBar.add(testMenu);
         menuBar.add(closeMenu);
         menuBar.add(changeLanguage);
+        menuBar.add(loadRobot);
 
         return menuBar;
     }

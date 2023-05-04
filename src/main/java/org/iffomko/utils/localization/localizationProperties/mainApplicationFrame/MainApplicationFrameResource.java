@@ -20,7 +20,15 @@ public class MainApplicationFrameResource extends ListResourceBundle {
                 {"yesButtonText", "Da"},
                 {"noButtonText", "Net"},
                 {"closeApp", "Zakrit prilozhenie?"},
-                {"confirmation", "Podtverzhdenie"}
+                {"confirmation", "Podtverzhdenie"},
+                {"FileChooser.cancelButtonText", "Otmenit'"},
+                {"FileChooser.fileNameLabelText", "Imya fayla"},
+                {"FileChooser.filesOfTypeLabelText", "Tip fayla"},
+                {"FileChooser.lookInLabelText", "Direktoriya"},
+                {"FileChooser.folderNameLabelText", "Nazvanie papki"},
+                {"selectRobotJarDescription", "Tol'ko .jar fayli"},
+                {"selectRobotJarApproveBtn", "Vibrat'"},
+                {"selectRobotJarTitle", "Zagrizit' .jar fayl"}
         };
     }
 }
